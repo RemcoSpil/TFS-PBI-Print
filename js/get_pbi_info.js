@@ -22,7 +22,16 @@ if((msg.from === 'popup' && msg.subject === 'PBIInfo'))
 	  details.pbi_id = document.querySelectorAll('.info-text-wrapper a')[0].innerText;
 	  details.tags = document.querySelectorAll('.work-item-view .tfs-tags .tags-items-container')[0].innerText;
 	  details.title = document.querySelectorAll('.info-text')[0].innerHTML;
-	  details.description = document.querySelectorAll('.workitemcountingtab[rawtitle=Description] iframe')[0].contentWindow.document.body.innerHTML;
+	  if (typeof document.querySelectorAll('.workitemcountingtab[rawtitle=Description] iframe')[0] !== 'undefined')
+	  {
+		details.description = document.querySelectorAll('.workitemcountingtab[rawtitle=Description] iframe')[0].contentWindow.document.body.innerHTML;
+	  }
+	  
+	  if (typeof document.querySelectorAll('.workitemcountingtab[rawtitle="Steps to Reproduce"] iframe')[0] !== 'undefined')
+	  {
+		details.description = document.querySelectorAll('.workitemcountingtab[rawtitle="Steps to Reproduce"] iframe')[0].contentWindow.document.body.innerHTML;
+	  }
+	  
 	  details.dod = document.querySelectorAll('.workitemcountingtab[rawtitle="Acceptance Criteria"] iframe')[0].contentWindow.document.body.innerHTML;
 	  
 	  //Send the information to popup

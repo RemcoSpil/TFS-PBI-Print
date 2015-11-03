@@ -2,7 +2,7 @@
 "update_url":"http://clients2.google.com/service/update2/crx",
   "manifest_version": 2,
   "name": "TFS PBI Print",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Printing a TFS PBI",
   "icons": { "16": "icon16.png",
              "32": "icon32.png",
